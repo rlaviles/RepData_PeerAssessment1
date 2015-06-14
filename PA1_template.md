@@ -28,6 +28,15 @@ library(ggplot2)
 act <- read.csv(unzip("repdata-data-activity.zip"))
 ```
 
+```
+## Warning in unzip("repdata-data-activity.zip"): error 1 in extracting from
+## zip file
+```
+
+```
+## Error in file(file, "rt"): invalid 'description' argument
+```
+
 2. *Format dates to the appropiate type*
 
 ```r
@@ -98,6 +107,18 @@ hist(act.day$steps, col = "lavender", main = "Histogram of Total Number of Steps
 
 ```r
 data <- read.csv("activity.csv")
+```
+
+```
+## Warning in file(file, "rt"): cannot open file 'activity.csv': No such file
+## or directory
+```
+
+```
+## Error in file(file, "rt"): cannot open the connection
+```
+
+```r
 stepsInInterval<-aggregate(steps~interval, data, mean)
 plot(stepsInInterval$interval, stepsInInterval$steps, type='o', col='blue',main="Average of steps per day", xlab="Interval", ylab="Average of Steps in the Interval")
 ```
@@ -206,16 +227,3 @@ ggplot(adi, aes(interval, steps)) +
 ```
 
 ![plot of chunk unnamed-chunk-16](figure/unnamed-chunk-16-1.png) 
-
-
-
-
-
-
-
-
-
-
-
-
-
